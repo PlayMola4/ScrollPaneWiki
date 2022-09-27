@@ -32,13 +32,18 @@ public class HelloApplication extends Application {
         imageView.setPreserveRatio(true);
 
         ScrollPane scroll = new ScrollPane();
-        scroll.setPrefSize(595, 200);
-
         scroll.setContent(imageView);
+        scroll.setPrefSize(595, 200);
+        scroll.setFitToHeight(true);
+        scroll.setFitToWidth(true);
+        scroll.setHmax(500);
+        scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+
 
         StackPane root = new StackPane();
         root.getChildren().addAll(scroll);
-        Scene scene = new Scene(root, 595, 200, Color.BEIGE);
+        Scene scene = new Scene(root, 600, 600, Color.BEIGE);
         stage.setTitle("ScrollPane Wiki");
         stage.setScene(scene);
         stage.show();
